@@ -1,0 +1,25 @@
+{
+    "peliculas": [
+      {
+        "Genero": "XXX",
+        "Nombre": "Garganta Profunda",
+        "Protagonista": "Lind Lovelance"
+      },
+
+      {
+        "Genero": "Adultos",
+        "Nombre": "Sexual Sushi",
+        "Protagonista": "Marilyn Chambers"
+      },
+  
+      {
+        "Genero": "XXX",
+        "Nombre": "Romance X",
+        "Protagonista": "Lind Lovelance"
+      }, {
+        "Genero": "Adultos",
+        "Nombre": "Hot Rats",
+        "Protagonista": "Nacho Vidal"
+      }
+    ]
+  }

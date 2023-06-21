@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8">
+		<title>LABORATORIO</title>
+		<style type="text/css">
+			#background{position:absolute; width:99%; height:130%;}
+			#fixed {position:absolute; top: 0px; left: 0px;}
+		</style>
+	</head>
+	<body>
+		<div>
+			<img id="background" src="Imagenes/fondo.jpg"/> 
+		</div>
+		<div id="fixed">
+			</br></br></br>
+			<div style="padding-left:510px; ">
+				<img src="Imagenes/selloespe.jpg" alt="ESPE" height="100" >
+			</div>
+			</br></br>
+			<div style="padding-left:510px;">
+				<h2><p style="text-align: center"> Pregunta 1</p></h2>
+				<p>Analiza una cadena de texto en un objeto DOMXML y extrae esta informacion con JavaScript <br> Para este ejercicio se utilizara una cadena de texto sobre marcas de celulares dentro de una tienda. <br>Tienda de celulares:</p>
+				<button onclick="traerSistemasA()">Traer los celulares con sistemas 1</button>
+				<button onclick="traerSistemasB()">Traer los celulares con sistemas 2</button>
+				
+				<p id="vacio"></p>
+				<br>
+				<button style="text-align: center;" id="casa">Home</button>		
+			</div>
+		</div>
+				
+								
+		</div>
+		<script>
+			var parcel, doc;
+			var texto="<tienda><celular><marca>Samsung</marca><modelo>A30</modelo><estado>nuevo</estado><sistema>Android</sistema></celular><celular><marca>iPhone</marca><modelo>XII</modelo><estado>Usado</estado><sistema>OS</sistema></celular><celular><marca>LG</marca><modelo>A30</modelo><estado>nuevo</estado><sistema>Android</sistema></celular><celular><marca>Nokia</marca><modelo>A30</modelo><estado>nuevo</estado><sistema>Android</sistema></celular><celular><marca>Apple</marca><modelo>A30</modelo><estado>nuevo</estado><sistema>OS</sistema></celular><celular><marca>Shiaomy</marca><modelo>A30</modelo><estado>nuevo</estado><sistema>Android</sistema> </celular></tienda>;"		
+		function traerSistemasA() {
+			var resultados = "";
+            parser = new DOMParser();
+            xmlDoc = parser.parseFromString(texto, "text/xml");
+			for(var i=0;i<texto.length;i++){
+				var contolaa=xmlDoc.getElementsByTagName("sistema")[i].childNodes[0].nodeValue;
+				if(contolaa=="Android"){
+					resultados += xmlDoc.getElementsByTagName("marca")[i].childNodes[0].nodeValue + "<br>";
+					
+				}
+				document.getElementById("vacio").innerHTML = resultados;
+            //document.getElementById("vacio").innerHTML = xmlDoc.getElementsByTagName("sistema")[0].childNodes[0].nodeValue
+			}
+        }	
+		function traerSistemasB() {
+			var resultados = "";
+            parser = new DOMParser();
+            xmlDoc = parser.parseFromString(texto, "text/xml");
+			for(var i=0;i<texto.length;i++){
+				var contolaa=xmlDoc.getElementsByTagName("sistema")[i].childNodes[0].nodeValue;
+				if(contolaa=="OS"){
+					resultados += xmlDoc.getElementsByTagName("marca")[i].childNodes[0].nodeValue + "<br>";
+					}
+					document.getElementById("vacio").innerHTML = resultados;
+            //document.getElementById("vacio").innerHTML = xmlDoc.getElementsByTagName("sistema")[0].childNodes[0].nodeValue
+			}
+        }
+          
+		
+		
+
+		var myButton = document.getElementById("casa");
+
+		// Agregar un controlador de evento al botón
+		casa.addEventListener("click", function() {
+		// Redireccionar a otra página
+		window.location.href ="../../index.html";
+		});
+		</script> 		
+	</body>
+</html>

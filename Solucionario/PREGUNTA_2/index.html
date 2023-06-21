@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8">
+		<title>LABORATORIO</title>
+		<style type="text/css">
+			#background{position:absolute; width:99%; height:130%;}
+			#fixed {position:absolute; top: 0px; left: 0px;}
+		</style>
+		    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+			<script>
+			  $(document).ready(function() {
+				$("button").click(function() {
+				  $.ajax({
+					type: "GET",
+					url: "animals.xml",
+					dataType: "xml",
+					success: function(xml) {
+					  var resultado = "";
+		  
+					  $(xml).find("mamiferos").each(function() {
+						var nombre = $(this).find("nombre").text();
+						var comida = $(this).find("comida").text();
+						resultado += "El '" + nombre + "' come '" + comida + "'<br>";
+					  });
+		  
+					  $(xml).find("anfibios").each(function() {
+						var nombre = $(this).find("nombre").text();
+						var comida = $(this).find("comida").text();
+						resultado += "El '" + nombre + "' come '" + comida + "'<br>";
+					  });
+		  
+					  $("#resultadoContainer").html(resultado);
+					},
+					error: function() {
+					  alert("Error al cargar el archivo XML.");
+					}
+				  });
+				});
+			  });
+			</script>
+	</head>
+	<body>
+		<div>
+			<img id="background" src="Imagenes/fondo.jpg"/> 
+		</div>
+		<div id="fixed">
+			</br></br></br>
+			<div style="padding-left:510px;">
+				<img src="Imagenes/selloespe.jpg" alt="ESPE" height="100" >
+			</div>
+			<div style="padding-left:395px;">
+				<h2>
+					<p style="text-align: center" style="color:#165014" ;>DEPARTAMENTO DE CIENCIAS DE LA COMPUTACIÓN</p>
+					<p style="text-align: center" style="color:#165014" ;>INGENIERÍA EN SISTEMAS E INFORMÁTICA</p>
+				</h2>
+				<h3>
+					<p style="text-align: center" style="color:#165014" ;>APLICACION DE TECNOLOGIAS WEB</p>
+				</h3>
+			</div>
+			<div style="padding-left:100px;">
+				<h4><p style="color:#1f1450";>Integrantes: <br>Espinosa Barbara<br>Fonseca Armando</p></h4>
+				<h4><p style="color:#1f1450";>NRC: 8444</p></h4>
+				<h4><p style="color:#1f1450";>GRUPO Nro: 01</p></h4>
+			</div>
+			
+			<div style="padding-left:250px;">
+				</br></br></br>
+				<h2><p style="text-align: center"> LABORATORIO</p></h2>
+			</div>
+			
+				<div style="padding-left:250px;">
+					<span>
+						Mediante un archivo XML, analizar dicho archivo XML utilizando el siguiente Script:<br><br>
+    
+   							xmlhttp = new XMLHttpRequest();<br>
+   							xmlhttp.open("GET", "ejemplo.xml",false);<br>
+   							xmlhttp.send();<br>
+   							xmlDoc = xmlhttp.responseXML;<br>
+					</span> <br>
+					<button>Obtener Datos</button>
+ 					 <div id="resultadoContainer"></div>
+				</div>
+			</div>						
+		</div> 		
+	</body>
+</html>

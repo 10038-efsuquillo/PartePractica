@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<animales>
+  <mamiferos>
+    <id>A01</id>
+    <nombre>El Panda</nombre>
+    <comida>Bambu</comida>
+  </mamiferos>
+  <mamiferos>
+    <id>A02</id>
+    <nombre>El Tigre</nombre>
+    <comida>Carne</comida>
+  </mamiferos>
+  <mamiferos>
+    <id>A03</id>
+    <nombre>El Raton</nombre>
+    <comida>Queso</comida>
+  </mamiferos>
+  <mamiferos>
+    <id>A04</id>
+    <nombre>El Leon</nombre>
+    <comida>Carne</comida>
+  </mamiferos>
+  <reptiles>
+    <id>A05</id>
+    <nombre>La Tortuga</nombre>
+    <comida>Algas Marinas</comida>
+  </reptiles>
+  <reptiles>
+    <id>A06</id>
+    <nombre>El Camaleon</nombre>
+    <comida>Hormigas</comida>
+  </reptiles>
+  <aves>
+    <id>A07</id>
+    <nombre>El Perico</nombre>
+    <comida>Diente de leon</comida>
+  </aves>
+  <aves>
+    <id>A08</id>
+    <nombre>La Gallina</nombre>
+    <comida>Maiz</comida>
+  </aves>
+  <aves>
+    <id>A09</id>
+    <nombre>La Graza</nombre>
+    <comida>Peces</comida>
+  </aves>
+  <peces>
+    <id>A05</id>
+    <nombre>El Atun</nombre>
+    <comida>Pequeños Custáceos</comida>
+  </peces>
+  <anfibios>
+    <id>A06</id>
+    <nombre>La Rana</nombre>
+    <comida>Moscas</comida>
+  </anfibios>
+  <insectos>
+    <id>A07</id>
+    <nombre>La Abeja</nombre>
+    <comida>Polen</comida>
+  </insectos>
+</animales>

@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8">
+		<title>LABORATORIO</title>
+		<style type="text/css">
+			#background{position:absolute; width:99%; height:130%;}
+			#fixed {position:absolute; top: 0px; left: 0px;}
+		</style>
+	</head>
+	<body>
+		<div>
+			<img id="background" src="Imagenes/fondo.jpg"/> 
+		</div>
+		<div id="fixed">
+			</br></br></br>
+			<div style="padding-left:510px; ">
+				<img src="Imagenes/selloespe.jpg" alt="ESPE" height="100" >
+			</div>
+			</br></br>
+			<div style="padding-left:510px;">
+				<h2><p style="text-align: center"> LABORATORIO</p></h2>
+				<p>Escoja un Genero de películas preferido para desplegar una tabla con la información correspondiente</p>
+			<select id="myselect" onchange="generarTabla()">
+			<option value="">Elija uno de los siguientes Grupos.</option>
+			<option value="XXX">XXX</option>
+			<option value="Adultos">Adultos</option>
+			</select>
+				<table id="vacio"></table>
+				<br>
+				<button style="text-align: center;" id="casa">Home</button>		
+			</div>
+			</div>
+				
+								
+		</div>
+		<script>
+			
+			function generarTabla() {
+            var generoSeleccionado = document.getElementById("myselect").value;
+            var peliculas = JSON.parse(peliculasJson).peliculas;
+
+            var tablaHTML = "<tr><th>Género</th><th>Nombre</th><th>Protagonista</th></tr>";
+
+            for (var i = 0; i < peliculas.length; i++) {
+                if (peliculas[i].Genero === generoSeleccionado) {
+                    tablaHTML += "<tr>";
+                    tablaHTML += "<td>" + peliculas[i].Genero + "</td>";
+                    tablaHTML += "<td>" + peliculas[i].Nombre + "</td>";
+                    tablaHTML += "<td>" + peliculas[i].Protagonista + "</td>";
+                    tablaHTML += "</tr>";
+                }
+            }
+
+            document.getElementById("vacio").innerHTML = tablaHTML;
+        }
+
+	var myButton = document.getElementById("casa");
+
+		// Agregar un controlador de evento al botón
+		casa.addEventListener("click", function() {
+		// Redireccionar a otra página
+		window.location.href ="../../index.html";
+		});
+
+
+		</script>
+	</body>
+	</html>
